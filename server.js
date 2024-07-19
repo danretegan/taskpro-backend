@@ -1,5 +1,11 @@
+require("dotenv").config();
 const app = require("./app");
+const colors = require("colors");
 
-app.listen(3000, () => {
-  console.log("Server is running. Use our API on port: 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(
+    colors.bgBlue.italic.bold(`Server is running. Use our API on port: ${PORT}`)
+  );
 });
